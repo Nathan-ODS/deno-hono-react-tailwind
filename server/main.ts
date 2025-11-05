@@ -1,6 +1,7 @@
 import { Hono } from "hono";
 import { booksApp } from "./routes/books.ts";
 import { serveStatic } from "hono/deno";
+import "@std/streams";
 
 const app = new Hono()
   .route("/api/books", booksApp);

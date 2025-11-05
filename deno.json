@@ -15,7 +15,7 @@
     "@types/react-dom": "npm:@types/react-dom@^19.2.0"
   },
   "tasks": {
-    "dev:server": "deno run --allow-net --watch server/main.ts",
+    "dev:server": "deno run --allow-net --allow-read --allow-env --watch server/main.ts",
     "dev:client": "deno run -A npm:vite",
     "dev": "deno run dev:server & deno run dev:client",
     "build": "deno run -A npm:vite --config vite.config.ts build",
