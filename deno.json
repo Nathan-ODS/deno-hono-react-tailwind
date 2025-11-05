@@ -1,0 +1,30 @@
+{
+  "imports": {
+    "@tailwindcss/vite": "npm:@tailwindcss/vite@^4.1.16",
+    "hono": "npm:hono@^4.10.4",
+    "react": "npm:react@^19.2.0",
+    "react-dom/client": "npm:react-dom@^19.2.0/client",
+    "react/jsx-runtime": "npm:react@^19.2.0/jsx-runtime",
+    "react/jsx-dev-runtime": "npm:react@^19.2.0/jsx-dev-runtime",
+    "@vitejs/plugin-react": "npm:@vitejs/plugin-react@^5.0.4",
+    "tailwindcss": "npm:tailwindcss@^4.1.16",
+    "vite": "npm:vite@^7.1.7",
+    "@types/react": "npm:@types/react@^19.2.0",
+    "babel-plugin-react-compiler": "npm:babel-plugin-react-compiler@latest",
+    "@types/react-dom": "npm:@types/react-dom@^19.2.0"
+  },
+  "tasks": {
+    "dev:server": "deno run --allow-net --watch server/main.ts",
+    "dev:client": "deno run -A npm:vite",
+    "dev": "deno run dev:server & deno run dev:client",
+    "build": "deno run -A npm:vite build"
+  },
+  "types": ["vite/client"],
+  "compilerOptions": {
+    "jsx": "react-jsx",
+    "jsxImportSource": "react",
+    "strict": true,
+    "lib": ["deno.window", "dom", "dom.iterable", "esnext"]
+  },
+  "nodeModulesDir": "auto"
+}
