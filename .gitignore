@@ -2,7 +2,7 @@
 node_modules/
 
 # Deno
-deno.lock
+# deno.lock
 .deno/
 
 # Build outputs
