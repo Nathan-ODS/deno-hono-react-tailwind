@@ -12,6 +12,7 @@
     "npm:react-dom@^19.2.0": "19.2.0_react@19.2.0",
     "npm:react@^19.2.0": "19.2.0",
     "npm:tailwindcss@^4.1.16": "4.1.16",
+    "npm:vite@*": "7.2.0_picomatch@4.0.3",
     "npm:vite@^7.1.7": "7.2.0_picomatch@4.0.3"
   },
   "jsr": {
