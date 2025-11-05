@@ -56,4 +56,12 @@ export default defineConfig({
     },
   },
   logLevel: "warn",
+  build: {
+    rollupOptions: {
+      input: "./client/index.html",
+    },
+    commonjsOptions: {
+      exclude: ["server/**"]
+    }
+  }
 });
