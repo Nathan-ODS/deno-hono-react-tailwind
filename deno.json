@@ -12,7 +12,7 @@
     "vite": "npm:vite@^7.1.7",
     "@types/react": "npm:@types/react@^19.2.0",
     "babel-plugin-react-compiler": "npm:babel-plugin-react-compiler@latest",
-    "@types/react-dom": "npm:@types/react-dom@^19.2.0",
+    "@types/react-dom": "npm:@types/react-dom@^19.2.0"
   },
   "tasks": {
     "dev:server": "deno run --allow-net --watch server/main.ts",
