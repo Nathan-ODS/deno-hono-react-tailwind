@@ -11,14 +11,15 @@
     "vite": "npm:vite@^7.1.7",
     "@types/react": "npm:@types/react@^19.2.0",
     "babel-plugin-react-compiler": "npm:babel-plugin-react-compiler@latest",
-    "@types/react-dom": "npm:@types/react-dom@^19.2.0"
+    "@types/react-dom": "npm:@types/react-dom@^19.2.0",
+    "@std/streams": "jsr:@std/streams@^1.0.13"
   },
   "tasks": {
     "dev:server": "deno run --allow-net --watch server/main.ts",
     "dev:client": "deno run -A npm:vite",
     "dev": "deno run dev:server & deno run dev:client",
     "build": "deno run -A npm:vite build",
-    "start": "deno run -A server/main.ts"
+    "start": "deno run -allow-net --allow-read server/main.ts"
   },
   "types": ["vite/client"],
   "compilerOptions": {
