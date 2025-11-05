@@ -3,8 +3,9 @@ import { booksApp } from "./routes/books.ts";
 import { serveStatic } from "hono/deno";
 
 const app = new Hono()
-  .route("/api/books", booksApp)
-  .use("/*", serveStatic({ root: "./client/dist" }));
+  .route("/api/books", booksApp);
+
+app.use("/*", serveStatic({ root: "./client/dist" }));
 
 export type AppType = typeof app;
 
