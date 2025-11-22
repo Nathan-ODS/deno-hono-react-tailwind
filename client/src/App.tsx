@@ -23,7 +23,9 @@ function App() {
       <h1 className="text-3xl font-bold underline">Hello World</h1>
       <p className="text-lg">Here are the books</p>
       <ul className="list-disc list-inside">
-        {books.map((book) => <li key={book.id} className="text-sm">{book.title}</li>)}
+        {books.map((book) => (
+          <li key={book.id} className="text-sm">{book.title}</li>
+        ))}
       </ul>
     </>
   );
