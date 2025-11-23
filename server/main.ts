@@ -1,12 +1,25 @@
 import { Hono } from "hono";
 import { booksApp } from "./routes/books.ts";
 import { serveStatic } from "hono/deno";
+import { logger } from "hono/logger";
 import "@std/streams";
 
-const app = new Hono()
-  .route("/api/books", booksApp);
+const kv = await Deno.openKv();
 
-app.use("/*", serveStatic({ root: "./client/dist" }));
+const initialData = {
+  books: [
+    { id: 1, title: "Book 1", author: "Author 1" },
+    { id: 2, title: "Book 2", author: "Author 2" },
+    { id: 3, title: "Book 3", author: "Author 3" },
+  ],
+};
+
+await kv.set(["books"], initialData.books);
+
+const app = new Hono()
+  .use("*", logger())
+  .use("/*", serveStatic({ root: "./client/dist" }))
+  .route("/api/books", booksApp);
 
 export type AppType = typeof app;
 
